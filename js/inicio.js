@@ -30,6 +30,7 @@ $(document).on("click",".calif",function(){
 	})
 	//ayuda
 	$(document).on("click","#s_ayuda",function(){
+		alert("ayuda");
 		loading();
 		$.post("http://veterinariakaluja.com/index.php/SoporteController/ayuda",function(r){
 			$("#modal-header").html("Solicitud de ayuda");
