@@ -11,9 +11,7 @@ $(document).on("click",".calif",function(){
 		})
 	})
 /***********************/
-
-	//mejora
-	$(document).on("click","#s_mejora",function(){
+	$("#s_mejora").click(function(){
 		loading();
 		$.post("http://veterinariakaluja.com/index.php/SoporteController/mejora",function(r){
 			$("#modal-header").html("Sugerencia de mejora");
