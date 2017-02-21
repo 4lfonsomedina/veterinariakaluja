@@ -1,335 +1,122 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Veterinaria Kaluja</title>
-
-
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Plugin CSS -->
-    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.css">
-    <link rel="stylesheet" href="vendor/device-mockups/device-mockups.min.css">
-    <link rel="stylesheet" href="css/jquery.datetimepicker.min.css" />
-
-
-    <!-- Theme CSS 
-    -->
-    <link href="css/general.css" rel="stylesheet">
-    <link href="css/menu.css" rel="stylesheet">
-
-     <!-- jQuery -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <!--googleMaps-->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFeZc4OlZB_tB_vKtQu6z3vEuqiieQ1_4&libraries=adsense&sensor=true&language=es"></script>
-    <!--Inicio
-    <script src="js/inicio.js"></script>
-     -->
-    <script src="js/menu.js"></script>
-    <script src="http://libregps.org/assets/js/jquery.datetimepicker.full.min.js"></script>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">  <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet'>
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
+<script src="jquery.js"></script>
 <style type="text/css">
-    body{
-        background: url(http://i.imgur.com/GHr12sH.jpg) no-repeat center center fixed;
+  @CHARSET "UTF-8";
+/*
+over-ride "Weak" message, show font in dark grey
+*/
+
+.progress-bar {
+    color: #333;
+} 
+
+/*
+Reference:
+http://www.bootstrapzen.com/item/135/simple-login-form-logo/
+*/
+
+* {
+    -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+}
+
+    .form-control {
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    @include box-sizing(border-box);
+
+    &:focus {
+      z-index: 2;
+    }
+  }
+
+body {
+  background: url(http://i.imgur.com/GHr12sH.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    }
+}
+
+.login-form {
+  margin-top: 60px;
+}
+
+form[role=login] {
+  color: #5d5d5d;
+  background: #f2f2f2;
+  padding: 26px;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+  form[role=login] img {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 35px;
+  }
+  form[role=login] input,
+  form[role=login] button {
+    font-size: 18px;
+    margin: 16px 0;
+  }
+  form[role=login] > div {
+    text-align: center;
+  }
+  
+.form-links {
+  text-align: center;
+  margin-top: 1em;
+  /*margin-bottom: 50px;*/
+}
+  .form-links a {
+    color: #fff;
+  }
 </style>
 
-<body>
-<div class="site-container">
-
-<!-- MENU DE PRUEBAS-->
-  <div class="site-pusher"> 
-  <header class="header">            
-  <a href="#" class="header__icon" id="header__icon"></a>      
-  <a href="#" class="header__logo"><img src="logo.png" width="100px"></a>            
-  <nav class="menu">        
-    <a href="#" id="curso_dash"><i class="fa fa-refresh" aria-hidden="true"></i> En curso</a>        
-    <a href="#" id="mascotas_dash"><i class="fa fa-paw" aria-hidden="true"></i> Mascotas</a>        
-    <a href="#" id="servicios_dash"><i class="fa fa-car" aria-hidden="true"></i> Servicios</a> 
-
-    <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-           <i class="fa fa-commenting" aria-hidden="true"></i> Soporte 
-          <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-          <span class="caret"></span></a>
-          <ul class="dropdown-menu dropdown-content">
-          <li><a id="s_mejora" href="#"><i class="fa fa-puzzle-piece" aria-hidden="true"></i> Sugerencia de mejora </a></li>
-          <li><a id="s_ayuda" href="#"><i class="fa fa-info-circle" aria-hidden="true"></i> Ayuda </a></li>
-            <li><a id="s_falla" href="#"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Informar Falla </a></li>
-          </ul>
-    </li>
-       
-  </nav>          
-  </header>    
-  <div class="site-content">      
-  <div class="container">                
+<!-- Bootstrap Core CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <script src="jquery.js"></script>
 
 
-<!--Multi Modal-->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
 
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title" id="modal-header"></h4>
-      </div>
-      <div class="modal-body" id="modal-body">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-      </div>
+<div class="container">
+<div class="alert alert-danger" h>
+  <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
+</div>
+  idden
+  <div class="row" id="pwd-container">
+    <div class="col-md-4"></div>
+    
+    <div class="col-md-4">
+      <section class="login-form">
+          <img src="http://veterinariakaluja.com/assets/img/logo.png" class="img-responsive" alt="" />
+          <input type="email" id="correo" name="correo" placeholder="Correo" required class="form-control input-lg" />
+          
+          <input type="password" id="pass" class="form-control input-lg" name="pass" placeholder="Password" />
+          
+          
+          <a id="cliente_entrar" class="btn btn-lg btn-primary" style="width:100%">Entrar</a>
+  
+        
+        <div class="form-links">
+        <!--
+          <a href="http://veterinariakaluja.com">veterinariaKaluja.com</a>
+          <br>
+          <a href="/Kaluja.apk">descargar app</a>
+         -->
+        </div>
+      </section>  
     </div>
+      
+      <div class="col-md-4"></div>
+      
 
   </div>
+    
+  
+  
 </div>
-
-
-
- <!-- jQuery -->
-<div id="contenido"></div>
-
-<script type="text/javascript">
-	$(document).ready(function(){
-
-	/***********************/
-	$("#contenido").load("http://veterinariakaluja.com/index.php/AppController/login");
-		$(document).on("click","#cliente_entrar",function(){
-			 if($('#correo').val()!=''&&$('#pass').val()!=''){
-			 	$("#contenido").load("http://veterinariakaluja.com/index.php/AppController/acceso?correo="+$('#correo').val()+"&pass="+$('#pass').val());
-			 }else{
-			 	alert("No se permiten campos vacios!");
-			 }
-			
-		})
-	/**********************/
-$(document).on("click",".calif",function(){
-	var c = this.id.split("_");
-		loading();
-		$.post("http://veterinariakaluja.com/index.php/UsuarioController/guardar_calificacion",{c:c[1],id:c[2]},function(r){
-			$("#modal-header").html("Servicio Calificado!");
-			$("#modal-body").html(r);
-		})
-	})
-/*********soporte**************/
-$(document).on("click","#s_mejora",function(){
-		loading();
-		$.post("http://veterinariakaluja.com/index.php/SoporteController/mejora",function(r){
-			$("#modal-header").html("Sugerencia de mejora");
-			$("#modal-body").html(r);
-		})
-	})
-	//ayuda
-	$(document).on("click","#s_ayuda",function(){
-		loading();
-		$.post("http://veterinariakaluja.com/index.php/SoporteController/ayuda",function(r){
-			$("#modal-header").html("Solicitud de soporte");
-			$("#modal-body").html(r);
-		})
-	})
-	//soporte
-	$(document).on("click","#s_falla",function(){
-		loading();
-		$.post("http://veterinariakaluja.com/index.php/SoporteController/falla",function(r){
-			$("#modal-header").html("Reporte de falla");
-			$("#modal-body").html(r);
-		})
-	})
-/**********************/
-
-	$("#reg").click(function(){
-		loading();
-		$.post("http://veterinariakaluja.com/index.php/UsuarioController/registro",function(r){
-			$("#modal-header").html("Registro");
-			$("#modal-body").html(r);
-		})
-	})
-	$("#dash_alta_admin").click(function(){
-		loading();
-		$.post("http://veterinariakaluja.com/index.php/AdminController/form_alta_admin",function(r){
-			$("#modal-header").html("Registro de integrante");
-			$("#modal-body").html(r);
-		})
-	})
-	$("#sess").click(function(){
-		loading();
-		$.post("http://veterinariakaluja.com/index.php/UsuarioController/inicio_session",function(r){
-			$("#modal-header").html("Entrar");
-			$("#modal-body").html(r);
-		})
-	})
-	$("#reg2").click(function(){
-		loading();
-		$.post("http://veterinariakaluja.com/index.php/UsuarioController/registro",function(r){
-			$("#modal-header").html("Registro");
-			$("#modal-body").html(r);
-		})
-	})
-	
-	//olvide pass
-	$(document).on("click","#olvide_pass",function(){
-		loading();
-		$.post("http://veterinariakaluja.com/index.php/SoporteController/recuperar_pass_vista1",function(r){
-			$("#modal-header").html("Recuperar password");
-			$("#modal-body").html(r);
-		})
-	})
-	//catalogo
-	$(document).on("click","#catalogo",function(){
-		loading();
-		$.post("http://veterinariakaluja.com/index.php/UsuarioController/catalogo",function(r){
-			$("#modal-header").html("Catalogo");
-			$("#modal-body").html(r);
-		})
-	})
-	$(document).on("click",".finalizar_servicio",function(){
-		loading();
-		var id = this.id.split("_");
-		id=id[1];
-		$.post("http://veterinariakaluja.com/index.php/AdminController/finalizar_servicio",{id:id},function(r){
-			$("#modal-header").html("Finalizar Servicio");
-			$("#modal-body").html(r);
-		})
-	})
-	$(document).on("click",".consulta",function(){
-		loading();
-		var id = this.id.split("_");
-		id=id[1];
-		$.post("http://veterinariakaluja.com/index.php/AdminController/consulta",{id:id},function(r){
-			$("#modal-header").html("Consulta");
-			$("#modal-body").html(r);
-		})
-	})
-	$(document).on("click",".vacuna",function(){
-		loading();
-		var id = this.id.split("_");
-		id=id[1];
-		$.post("http://veterinariakaluja.com/index.php/AdminController/vacuna",{id:id},function(r){
-			$("#modal-header").html("Vacuna");
-			$("#modal-body").html(r);
-		})
-	})
-	$(document).on("click",".atendiendo_servicio",function(){
-		loading();
-		var id = this.id.split("_");
-		id=id[1];
-		$.post("http://veterinariakaluja.com/index.php/AdminController/atendiendo_servicio",{id:id},function(r){
-			$("#modal-header").html("Atendiendo Servicio");
-			$("#modal-body").html(r);
-		})
-	})
-	$(document).on("click","#plus_mascota",function(){
-		loading();
-		$.post("http://veterinariakaluja.com/index.php/UsuarioController/form_alta_mascota",function(r){
-			$("#modal-header").html("Nueva Mascota");
-			$("#modal-body").html(r);
-		})
-	})
-	$(document).on("click",".ver_imagen_consulta",function(){
-		loading();
-		var id = this.id.split("_");
-		id=id[1];
-			$("#modal-header").html("Foto Consulta");
-			$("#modal-body").html("<center><img src='http://veterinariakaluja.com/assets/img/consultas/consulta_"+id+"_thumb.jpg' width='90%'></center>");
-	})
-	$(document).on("click",".datos_mascota",function(){
-		var id = this.id.split("_");
-		id=id[1];
-		loading();
-		$.post("http://veterinariakaluja.com/index.php/MascotaController/datos_mascota",{id:id},function(r){
-			$("#modal-header").html("Ficha de Mascota");
-			$("#modal-body").html(r);
-		})
-	})
-	$(document).on("click",".datos_mascota2",function(){
-		var id = this.id.split("_");
-		id=id[1];
-		loading();
-		$.post("http://veterinariakaluja.com/index.php/MascotaController/datos_mascota2",{id:id},function(r){
-			$("#modal-header").html("Ficha de Mascota");
-			$("#modal-body").html(r);
-		})
-	})
-	$(document).on("click",".mapa_admin",function(){
-		var id = this.id.split("_");
-		id=id[1];
-		loading();
-		$.post("http://veterinariakaluja.com/index.php/AdminController/mapa",{id:id},function(r){
-			$("#modal-header").html("Direccion");
-			$("#modal-body").html(r);
-		})
-	})
-	$(document).on("click",".abrir_servicio_admin",function(){
-		var id = this.id.split("_");
-		id=id[1];
-		loading();
-		$.post("http://veterinariakaluja.com/index.php/AdminController/abrir_servicio",{id:id},function(r){
-			$("#modal-header").html("Servicio activo");
-			$("#modal-body").html(r);
-		})
-	})
-	$(document).on("click",".ver_servicio",function(){
-		var id = this.id.split("_");
-		id=id[1];
-		loading();
-		$.post("http://veterinariakaluja.com/index.php/MascotaController/ver_servicio",{id:id},function(r){
-			$("#modal-header").html("Servicio Kaluja");
-			$("#modal-body").html(r);
-		})
-	})
-	$(document).on("click",".sol_serv",function(){
-		var id = this.id.split("_");
-		id=id[1];
-		loading();
-		$.post("http://veterinariakaluja.com/index.php/MascotaController/solicitar_servicio",{id:id,s:""},function(r){
-			$("#modal-header").html("Solicitud de servicio");
-			$("#modal-body").html(r);
-		})
-	})
-	$(document).on("click",".sol_servicio",function(){
-		var s = this.id.split("_");
-		s=s[1];
-		loading();
-		$.post("http://veterinariakaluja.com/index.php/MascotaController/solicitar_servicio",{id:"",s:s},function(r){
-			$("#modal-header").html("Solicitud de servicio");
-			$("#modal-body").html(r);
-		})
-	})
-	function loading(){
-		$('body').removeClass('with--sidebar');
-		$("#myModal").modal("show");
-		$("#modal-header").html("Cargando...");
-		$("#modal-body").html("<div class='spinner'>"+
-								  "<div class='bounce1'></div>"+
-								  "<div class='bounce2'></div>"+
-								  "<div class='bounce3'></div>"+
-								"</div><br><br>");
-	}
-})
-</script>
