@@ -6,12 +6,14 @@ $(document).ready(function(){
 	var timer="";
 		$.post("http://veterinariakaluja.com/index.php/UsuarioController/mascotas", function(r){
 			$("#dash_contenido").html(r);
+			$('body').removeClass('with--sidebar');
 		})
 
 		$(document).on("click","#mascotas_dash",function(){
 			$.post("http://veterinariakaluja.com/index.php/UsuarioController/mascotas", function(r){
 				clearInterval(timer);
 			$("#dash_contenido").html(r);
+			$('body').removeClass('with--sidebar');
 			})
 		})
 
@@ -19,6 +21,7 @@ $(document).ready(function(){
 			clearInterval(timer);
 			$.post("http://veterinariakaluja.com/index.php/UsuarioController/servicios", function(r){
 			$("#dash_contenido").html(r);
+			$('body').removeClass('with--sidebar');
 			})
 		})
 
@@ -77,6 +80,7 @@ $(document).on("click",".calif",function(){
 	}
 	function servicios_en_curso(){
 			$.post("http://veterinariakaluja.com/index.php/UsuarioController/servicios_en_curso", function(r){
+				$('body').removeClass('with--sidebar');
 				if(r!='0')
 					$("#dash_contenido").html(r);
 			})
