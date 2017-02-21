@@ -74,14 +74,6 @@ $(document).on("click","#s_mejora",function(){
 			$("#modal-body").html(r);
 		})
 	})
-	//recuperar pass
-	$("#s_mejora").click(function(){
-		loading();
-		$.post("http://veterinariakaluja.com/index.php/SoporteController/mejora",function(r){
-			$("#modal-header").html("Sugerencia de mejora");
-			$("#modal-body").html(r);
-		})
-	})
 	
 	//olvide pass
 	$(document).on("click","#olvide_pass",function(){
