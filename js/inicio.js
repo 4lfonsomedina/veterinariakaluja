@@ -28,6 +28,8 @@ $(document).ready(function(){
 
 		$(document).on("click","#curso_dash",function(){
 			clearInterval(timer);
+			$('body').removeClass('with--sidebar');
+			page_loading();
 			servicios_en_curso();
 			timer = setInterval(function(){
 				servicios_en_curso();
