@@ -46,5 +46,39 @@ $(document).on("click",".calif",function(){
 								  "<div class='bounce3'></div>"+
 								"</div><br><br>");
 	}
+
+	//dash timer
+
+	//mascotas
+	var timer="";
+		$.post("<?echo site_url('UsuarioController/mascotas');?>", function(r){
+			$("#dash_contenido").html(r);
+		})
+		$(document).on("click","#mascotas_dash",function(){
+			$.post("<?echo site_url('UsuarioController/mascotas');?>", function(r){
+				clearInterval(timer);
+			$("#dash_contenido").html(r);
+			})
+		})
+		$(document).on("click","#servicios_dash",function(){
+			clearInterval(timer);
+			$.post("<?echo site_url('UsuarioController/servicios');?>", function(r){
+			$("#dash_contenido").html(r);
+			})
+		})
+		$(document).on("click","#curso_dash",function(){
+			clearInterval(timer);
+			servicios_en_curso();
+			timer = setInterval(function(){
+				servicios_en_curso();
+			 }, 15000);
+		})
+
+		function servicios_en_curso(){
+			$.post("<?echo site_url('UsuarioController/servicio_en_curso');?>",{us:<?echo $this->session->userdata('id');?>}, function(r){
+				if(r!='0')
+					$("#dash_contenido").html(r);
+			})
+		}
 })
 
