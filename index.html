@@ -5,8 +5,7 @@
 <script type="text/javascript">
   $(document).ready(function(){
 
-    $("#correo").val(window.localStorage.getItem("correo"));
-    $("#pass").val(window.localStorage.getItem("pass"));
+    alert(window.localStorage.getItem("correo"));
 
     $("#cliente_entrar").click(function(){
       var correo = $("#correo").val();
