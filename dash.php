@@ -113,21 +113,4 @@
   </div>
 </div>
 
-
-
- <!-- jQuery -->
-<script type="text/javascript">
-	$(document).ready(function(){
-		$("#contenido").load("http://veterinariakaluja.com/index.php/AppController/login");
-		$(document).on("click","#cliente_entrar",function(){
-			 if($('#correo').val()!=''&&$('#pass').val()!=''){
-			 	$("#contenido").load("http://veterinariakaluja.com/index.php/AppController/acceso?correo="+$('#correo').val()+"&pass="+$('#pass').val());
-			 }else{
-			 	alert("No se permiten campos vacios!");
-			 }
-			
-		})
-	})
-
-</script>
-<div id="contenido"></div>
+<div id="load_dash"></div>
