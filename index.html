@@ -4,9 +4,9 @@
 
 <script type="text/javascript">
   $(document).ready(function(){
-    
-    $("#correo").val(localStorage.getItem("correo"));
-    $("#pass").val(localStorage.getItem("pass"));
+
+    $("#correo").val(window.localStorage.getItem("correo"));
+    $("#pass").val(window.localStorage.getItem("pass"));
 
     $("#cliente_entrar").click(function(){
       var correo = $("#correo").val();
@@ -15,8 +15,8 @@
     })
 
     function dash_session(correo,pass){
-      localStorage.setItem("correo", correo);
-      localStorage.setItem("pass", pass);
+      window.localStorage.setItem("correo", correo);
+      window.localStorage.setItem("pass", pass);
     }
     function entrar(correo,pass){
       if(correo!=""&&pass!=""){
