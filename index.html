@@ -11,6 +11,7 @@
       if(correo!=""&&pass!=""){
         $.post("http://veterinariakaluja.com/index.php/AppController/validacion?correo="+correo+"&pass="+pass,function(r){
           if(r!="0"){
+            alert(r);
             $("#app_contenedor").load("http://veterinariakaluja.com/index.php/AppController/acceso?correo="+correo+"&pass="+pass);
           }else{
             alert("Correo o password incorrectos...");
