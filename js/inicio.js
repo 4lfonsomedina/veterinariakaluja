@@ -51,21 +51,24 @@ $(document).on("click",".calif",function(){
 
 	//mascotas
 	var timer="";
-		$.post("<?echo site_url('UsuarioController/mascotas');?>", function(r){
+		$.post("http://veterinariakaluja.com/index.php/UsuarioController/mascotas", function(r){
 			$("#dash_contenido").html(r);
 		})
+
 		$(document).on("click","#mascotas_dash",function(){
-			$.post("<?echo site_url('UsuarioController/mascotas');?>", function(r){
+			$.post("http://veterinariakaluja.com/index.php/UsuarioController/mascotas", function(r){
 				clearInterval(timer);
 			$("#dash_contenido").html(r);
 			})
 		})
+
 		$(document).on("click","#servicios_dash",function(){
 			clearInterval(timer);
-			$.post("<?echo site_url('UsuarioController/servicios');?>", function(r){
+			$.post("http://veterinariakaluja.com/index.php/UsuarioController/mascotas", function(r){
 			$("#dash_contenido").html(r);
 			})
 		})
+
 		$(document).on("click","#curso_dash",function(){
 			clearInterval(timer);
 			servicios_en_curso();
@@ -75,7 +78,7 @@ $(document).on("click",".calif",function(){
 		})
 
 		function servicios_en_curso(){
-			$.post("<?echo site_url('UsuarioController/servicio_en_curso');?>",{us:<?echo $this->session->userdata('id');?>}, function(r){
+			$.post("http://veterinariakaluja.com/index.php/UsuarioController/mascotas", function(r){
 				if(r!='0')
 					$("#dash_contenido").html(r);
 			})
