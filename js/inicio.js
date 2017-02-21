@@ -80,14 +80,14 @@ $(document).on("click",".calif",function(){
 								"</div><br><br>");
 	}
 	function page_loading(){
-		$("#dash_contenido").html("<center><div class='spinner'>"+
+		$("#dash_contenido").html("<center><div class='spinner' style='color:white;'>"+
 								  "<div class='bounce1'></div>"+
 								  "<div class='bounce2'></div>"+
 								  "<div class='bounce3'></div>"+
 								"</div></center>");
 	}
 	function servicios_en_curso(){
-			$.post("http://veterinariakaluja.com/index.php/UsuarioController/servicios_en_curso", function(r){
+			$.post("http://veterinariakaluja.com/index.php/UsuarioController/servicio_en_curso", function(r){
 				page_loading();
 				if(r!='0')
 					$("#dash_contenido").html(r);
