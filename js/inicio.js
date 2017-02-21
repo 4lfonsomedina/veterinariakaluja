@@ -10,7 +10,31 @@ $(document).on("click",".calif",function(){
 			$("#modal-body").html(r);
 		})
 	})
-/***********************/
+/*********soporte**************/
+$(document).on("click","#s_mejora",function(){
+		loading();
+		$.post("http://veterinariakaluja.com/index.php/SoporteController/mejora",function(r){
+			$("#modal-header").html("Sugerencia de mejora");
+			$("#modal-body").html(r);
+		})
+	})
+	//ayuda
+	$(document).on("click","#s_ayuda",function(){
+		loading();
+		$.post("http://veterinariakaluja.com/index.php/SoporteController/ayuda",function(r){
+			$("#modal-header").html("Solicitud de soporte");
+			$("#modal-body").html(r);
+		})
+	})
+	//soporte
+	$(document).on("click","#s_falla",function(){
+		loading();
+		$.post("http://veterinariakaluja.com/index.php/SoporteController/falla",function(r){
+			$("#modal-header").html("Reporte de falla");
+			$("#modal-body").html(r);
+		})
+	})
+/**********************/
 
 	$("#reg").click(function(){
 		loading();
