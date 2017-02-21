@@ -8,5 +8,8 @@ $(document).ready(function(){
 		});
 		$('.dropbtn').click(function(){
 			document.getElementById("myDropdown").classList.toggle("show");
+		})
+		$("#dash_soporte").click(function(){
+			$("#soporte").toggle();
 		})   
 });

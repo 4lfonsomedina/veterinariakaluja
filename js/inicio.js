@@ -11,7 +11,7 @@ $(document).on("click",".calif",function(){
 		})
 	})
 /***********************/
-	$("#s_mejora").click(function(){
+	$(document).on("click","#s_mejora",function(){
 		loading();
 		$.post("http://veterinariakaluja.com/index.php/SoporteController/mejora",function(r){
 			$("#modal-header").html("Sugerencia de mejora");
@@ -28,7 +28,6 @@ $(document).on("click",".calif",function(){
 	})
 	//ayuda
 	$(document).on("click","#s_ayuda",function(){
-		alert("ayuda");
 		loading();
 		$.post("http://veterinariakaluja.com/index.php/SoporteController/ayuda",function(r){
 			$("#modal-header").html("Solicitud de ayuda");
