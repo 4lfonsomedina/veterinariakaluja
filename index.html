@@ -5,7 +5,10 @@
 <script type="text/javascript">
   $(document).ready(function(){
 
-    alert(window.localStorage.getItem("correo"));
+    if(window.localStorage.getItem("correo")!=null&&window.localStorage.getItem("pass")!=null){
+      $("#correo").val(window.localStorage.getItem("correo"));
+      $("#pass").val(window.localStorage.getItem("pass"));
+    }
 
     $("#cliente_entrar").click(function(){
       var correo = $("#correo").val();
