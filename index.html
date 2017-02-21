@@ -5,12 +5,24 @@
 <script type="text/javascript">
   $(document).ready(function(){
     
+    $("#correo").val(localStorage.getItem("correo"));
+    $("#pass").val(localStorage.getItem("pass"));
+
     $("#cliente_entrar").click(function(){
       var correo = $("#correo").val();
       var pass = $("#pass").val();
+      
+    })
+
+    function dash_session(correo,pass){
+      localStorage.setItem("correo", correo);
+      localStorage.setItem("pass", pass);
+    }
+    function entrar(correo,pass){
       if(correo!=""&&pass!=""){
         $.post("http://veterinariakaluja.com/index.php/AppController/validacion?correo="+correo+"&pass="+pass,function(r){
           if(r!="0"){
+            dash_session(correo,pass);
             window.location.replace("dash.html");
           }else{
             alert("Correo o password incorrectos...");
@@ -19,8 +31,7 @@
       }else{
         alert("No se permiten campos vacios");
       }
-    })
-
+    }
 
   })
 </script>
