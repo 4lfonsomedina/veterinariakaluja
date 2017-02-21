@@ -1,13 +1,15 @@
 <!-- Bootstrap Core CSS -->
     <link href="bootstrap.css" rel="stylesheet">
     <script src="jquery.js"></script>
+
 <script type="text/javascript">
   $(document).ready(function(){
+    
     $("#cliente_entrar").click(function(){
       var correo = $("#correo").val();
       var pass = $("#pass").val();
       if(correo!=""&&pass!=""){
-        $.post("http://veterinariakaluja.com/index.php/AppController/validacion",{correo:correo,pass:pass},function(r){
+        $.post("http://veterinariakaluja.com/index.php/AppController/validacion?correo="+correo+"&pass="+pass,function(r){
           if(r!=0){
             $("#app_contenedor").load("http://veterinariakaluja.com/index.php/AppController/acceso?correo="+correo+"&pass="+pass);
           }else{
@@ -16,6 +18,8 @@
         })
       }
     })
+
+    
   })
 </script>
 
