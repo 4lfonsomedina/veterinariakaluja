@@ -1,6 +1,16 @@
 
 $(document).ready(function(){
 
+	/***********************/
+	$("#contenido").load("http://veterinariakaluja.com/index.php/AppController/login");
+		$(document).on("click","#cliente_entrar",function(){
+			 if($('#correo').val()!=''&&$('#pass').val()!=''){
+			 	$("#contenido").load("http://veterinariakaluja.com/index.php/AppController/acceso?correo="+$('#correo').val()+"&pass="+$('#pass').val());
+			 }else{
+			 	alert("No se permiten campos vacios!");
+			 }
+			
+		})
 	/**********************/
 $(document).on("click",".calif",function(){
 	var c = this.id.split("_");

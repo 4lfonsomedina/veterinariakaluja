@@ -34,8 +34,9 @@
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
     <!--googleMaps-->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFeZc4OlZB_tB_vKtQu6z3vEuqiieQ1_4&libraries=adsense&sensor=true&language=es"></script>
-    <!--Inicio-->
+    <!--Inicio
     <script src="js/inicio.js"></script>
+    -->
     <script src="js/menu.js"></script>
     <script src="http://libregps.org/assets/js/jquery.datetimepicker.full.min.js"></script>
 
@@ -112,18 +113,4 @@
 
 
  <!-- jQuery -->
-<script type="text/javascript">
-	$(document).ready(function(){
-		$("#contenido").load("http://veterinariakaluja.com/index.php/AppController/login");
-		$(document).on("click","#cliente_entrar",function(){
-			 if($('#correo').val()!=''&&$('#pass').val()!=''){
-			 	$("#contenido").load("http://veterinariakaluja.com/index.php/AppController/acceso?correo="+$('#correo').val()+"&pass="+$('#pass').val());
-			 }else{
-			 	alert("No se permiten campos vacios!");
-			 }
-			
-		})
-	})
-
-</script>
 <div id="contenido"></div>
