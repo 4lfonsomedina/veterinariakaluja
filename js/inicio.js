@@ -21,13 +21,13 @@ $(document).on("click",".calif",function(){
 		})
 	})
 /*********soporte**************/
-$(document).on("click","#s_mejora",function(){
-		loading();
+$("#s_mejora").click(function(){
+	loading();
 		$.post("http://veterinariakaluja.com/index.php/SoporteController/mejora",function(r){
 			$("#modal-header").html("Sugerencia de mejora");
 			$("#modal-body").html(r);
 		})
-	})
+})
 	//ayuda
 	$(document).on("click","#s_ayuda",function(){
 		loading();
