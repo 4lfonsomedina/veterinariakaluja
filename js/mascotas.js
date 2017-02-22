@@ -11,4 +11,13 @@ $(document).ready(function(){
 			$("#modal-body").html(r);
 		})
 	})
+	function loading(){
+		$("#myModal").modal("show");
+		$("#modal-header").html("Cargando...");
+		$("#modal-body").html("<div class='spinner'>"+
+								  "<div class='bounce1'></div>"+
+								  "<div class='bounce2'></div>"+
+								  "<div class='bounce3'></div>"+
+								"</div><br><br>");
+	}
 })
