@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	/***************Solicitar servicio***********************/
+	alert("mascotas");
 	$(document).on("click",".sol_serv",function(){
 		var id = this.id.split("_");
 		id=id[1];
