@@ -1,7 +1,23 @@
 
 $(document).ready(function(){
-	//dash timer
-
+	
+	$(document).on("click","#plus_mascota",function(){
+		loading();
+		$.post("http://veterinariakaluja.com/index.php/UsuarioController/form_alta_mascota",function(r){
+			$("#modal-header").html("Nueva Mascota");
+			$("#modal-body").html(r);
+		})
+	})
+	$(document).on("click",".datos_mascota",function(){
+		var id = this.id.split("_");
+		id=id[1];
+		loading();
+		$.post("http://veterinariakaluja.com/index.php/MascotaController/datos_mascota",{id:id},function(r){
+			$("#modal-header").html("Ficha de Mascota");
+			$("#modal-body").html(r);
+		})
+	})
+/*******************************************************************/
 	//mascotas
 	var timer="";
 		$.post("http://veterinariakaluja.com/index.php/UsuarioController/mascotas", function(r){
