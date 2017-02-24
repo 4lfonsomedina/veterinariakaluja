@@ -39,24 +39,25 @@ hr {
   border-radius: 5px;
 }
 .ver_imagen_consulta{
-  color: white;
+  /*color: white;*/
 }
 .img-nav{
-	height: 80px;
+  height: 80px;
 }
 .tab_borde{
-	background-color: #337ab7;
-	color:white;
+  border-style: solid;
+  border-color: #337ab7;
+  color:black;
 }
 .nav-pills > li > a{
-  	border-radius: 0;
+    border-radius: 0;
 }
 .table_admin td{
   color:#585858;
   background-color: white;
 }
 .tab-content{
-  /*background-color: white !important;*/
+  background-color: white !important;
   padding: 10px;
 }
 .sintomas{
