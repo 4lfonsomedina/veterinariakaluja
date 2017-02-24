@@ -10,10 +10,8 @@
     <author email="4lfonsomedina@gmail.com" href="http://veterinariaKaluja.com">
         Moronga Technology
     </author>
-    
-
     <platform name="android">
-        <icon density="ldpi" src="logo2.png" />
+        <icon density="ldpi" src="www/logo2.png" />
         <icon density="mdpi" src="logo2.png" />
         <icon density="hdpi" src="logo2.png" />
         <icon density="xhdpi" src="logo2.png" />
