@@ -1,23 +1,31 @@
 
 $(document).ready(function(){
 	/**************alta mascota*****************/
-	$(document).on("click","#mascota_submit",function(){
-			if($("#mnombre").val()!=""&&$("#mraza").val()!=""&&$("#mcolor").val()!=""&&$("#mpeso").val()!=""&$("#mnacimiento").val()!=""){
-				//alert("Se ha enviado un correo de verificacion a "+$("#rc").val());
-				//$("#mascota_form").submit();
-				loading();
-				$('#mascota_form').ajaxForm(function(result) {
-			        $("#myModal").modal("hide");
-                    page_loading();
-					$.post("http://veterinariakaluja.com/index.php/UsuarioController/mascotas", function(r){
-						clearInterval(timer);
-						$("#dash_contenido").html(r);
-			    	});
-				})
-			}else{
-				alert("No se permiten campos vacios");
-			}
-		})
+	$(document).on("submit", "#mascota_form", function(event){
+	    event.preventDefault();
+	    var url=$(this).attr("action");
+	    $.ajax({
+	        url: url,
+	        type: $(this).attr("method"),
+	        dataType: "JSON",
+	        data: new FormData(this),
+	        processData: false,
+	        contentType: false,
+	        success: function (data, status)
+	        {
+	        	$("#myModal").modal("hide");
+	        	page_loading();
+	        	$.post("http://veterinariakaluja.com/index.php/UsuarioController/mascotas", function(r){
+				$("#dash_contenido").html(r);
+			})
+	        },
+	        error: function (xhr, desc, err)
+	        {
+	        	alert(err);
+	        }
+	    });        
+	});
+
 	$(document).on("change","#file_foto",function(){
       	addImage(this); 
      });
