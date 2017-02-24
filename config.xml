@@ -1,3 +1,7 @@
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.phonegap.helloworld"
+        version   = "1.0.0">
 
     <name>VeterinariaKaluja</name>
     <description>
@@ -28,3 +32,4 @@
         <splash density="port-xxhdpi" src="logo2.png" />
         <splash density="port-xxxhdpi" src="logo2.png" />
     </platform>
+</widget>
