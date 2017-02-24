@@ -6,24 +6,14 @@ $(document).ready(function(){
 				//alert("Se ha enviado un correo de verificacion a "+$("#rc").val());
 				//$("#mascota_form").submit();
 				loading();
-				var formData = new FormData(document.getElementById("mascota_form"));
-				$.ajax({
-                url: "http://veterinariakaluja.com/index.php/UsuarioController/alta_mascota",
-                type: "POST",
-                dataType: "html",
-                data: formData,
-                cache: false,
-                contentType: false,
-	     		processData: false
-            	}).done(function(res){
-            		alert(res);
-                    $("#myModal").modal("hide");
+				$('#mascota_form').ajaxForm(function(result) {
+			        $("#myModal").modal("hide");
                     page_loading();
 					$.post("http://veterinariakaluja.com/index.php/UsuarioController/mascotas", function(r){
-					clearInterval(timer);
-					$("#dash_contenido").html(r);
-			})
-                });
+						clearInterval(timer);
+						$("#dash_contenido").html(r);
+			    	});
+				})
 			}else{
 				alert("No se permiten campos vacios");
 			}
