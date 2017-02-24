@@ -1,6 +1,32 @@
 
 $(document).ready(function(){
-	/**************alta mascota imagen*****************/
+	/**************alta mascota*****************/
+	$(document).on("change","#mascota_submit",function(){
+			if($("#mnombre").val()!=""&&$("#mraza").val()!=""&&$("#mcolor").val()!=""&&$("#mpeso").val()!=""&$("#mnacimiento").val()!=""){
+				//alert("Se ha enviado un correo de verificacion a "+$("#rc").val());
+				//$("#mascota_form").submit();
+				loading();
+				var formData = new FormData(document.getElementById("mascota_form"));
+				$.ajax({
+                url: $("#form_informe").attr("action"),
+                type: "POST",
+                dataType: "html",
+                data: formData,
+                cache: false,
+                contentType: false,
+	     		processData: false
+            	}).done(function(res){
+                    $("#myModal").modal("hide");
+                    page_loading();
+					$.post("http://veterinariakaluja.com/index.php/UsuarioController/mascotas", function(r){
+					clearInterval(timer);
+					$("#dash_contenido").html(r);
+			})
+                });
+			}else{
+				alert("No se permiten campos vacios");
+			}
+		})
 	$(document).on("change","#file_foto",function(){
       	addImage(this); 
      });
