@@ -6,6 +6,8 @@
     <author email="4lfonsomedina@gmail.com" href="http://veterinariaKaluja.com">
         PhoneGap Team
     </author>
+    <plugin name="cordova-plugin-camera" />
+    <plugin name="cordova-plugin-file" />
     <platform name="android">
         <icon density="ldpi" src="logo2.png" />
         <icon density="mdpi" src="logo2.png" />
@@ -25,8 +27,5 @@
         <splash density="port-xhdpi" src="logo2.png" />
         <splash density="port-xxhdpi" src="logo2.png" />
         <splash density="port-xxxhdpi" src="logo2.png" />
-        <feature name="file" required="true">
-        	<param name="file" name="http://api.phonegap.com/1.0/file"/>
-        </feature>
     </platform>
 </widget>
