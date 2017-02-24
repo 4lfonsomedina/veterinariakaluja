@@ -8,7 +8,7 @@ $(document).ready(function(){
 				loading();
 				var formData = new FormData(document.getElementById("mascota_form"));
 				$.ajax({
-                url: $("#form_informe").attr("action"),
+                url: $("#mascota_form").attr("action"),
                 type: "POST",
                 dataType: "html",
                 data: formData,
