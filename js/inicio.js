@@ -1,7 +1,7 @@
 
 $(document).ready(function(){
 	/**************alta mascota*****************/
-	$(document).on("change","#mascota_submit",function(){
+	$(document).on("click","#mascota_submit",function(){
 			if($("#mnombre").val()!=""&&$("#mraza").val()!=""&&$("#mcolor").val()!=""&&$("#mpeso").val()!=""&$("#mnacimiento").val()!=""){
 				//alert("Se ha enviado un correo de verificacion a "+$("#rc").val());
 				//$("#mascota_form").submit();
