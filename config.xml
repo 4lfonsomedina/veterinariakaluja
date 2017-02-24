@@ -7,24 +7,24 @@
         PhoneGap Team
     </author>
     <platform name="android">
-        <icon density="ldpi" src="logo.png" />
-        <icon density="mdpi" src="logo.png" />
-        <icon density="hdpi" src="logo.png" />
-        <icon density="xhdpi" src="logo.png" />
-        <icon density="xxhdpi" src="logo.png" />
-        <icon density="xxxhdpi" src="logo.png" />
-        <splash density="land-ldpi" src="logo.png" />
-        <splash density="land-mdpi" src="logo.png" />
-        <splash density="land-hdpi" src="logo.png" />
-        <splash density="land-xhdpi" src="logo.png" />
-        <splash density="land-xxhdpi" src="logo.png" />
-        <splash density="land-xxxhdpi" src="logo.png" />
-        <splash density="port-ldpi" src="logo.png" />
-        <splash density="port-mdpi" src="logo.png" />
-        <splash density="port-hdpi" src="logo.png" />
-        <splash density="port-xhdpi" src="logo.png" />
-        <splash density="port-xxhdpi" src="logo.png" />
-        <splash density="port-xxxhdpi" src="logo.png" />
+        <icon density="ldpi" src="logo2.png" />
+        <icon density="mdpi" src="logo2.png" />
+        <icon density="hdpi" src="logo2.png" />
+        <icon density="xhdpi" src="logo2.png" />
+        <icon density="xxhdpi" src="logo2.png" />
+        <icon density="xxxhdpi" src="logo2.png" />
+        <splash density="land-ldpi" src="logo2.png" />
+        <splash density="land-mdpi" src="logo2.png" />
+        <splash density="land-hdpi" src="logo2.png" />
+        <splash density="land-xhdpi" src="logo2.png" />
+        <splash density="land-xxhdpi" src="logo2.png" />
+        <splash density="land-xxxhdpi" src="logo2.png" />
+        <splash density="port-ldpi" src="logo2.png" />
+        <splash density="port-mdpi" src="logo2.png" />
+        <splash density="port-hdpi" src="logo2.png" />
+        <splash density="port-xhdpi" src="logo2.png" />
+        <splash density="port-xxhdpi" src="logo2.png" />
+        <splash density="port-xxxhdpi" src="logo2.png" />
+        <feature name="http://api.phonegap.com/1.0/file"/>
     </platform>
-	<feature name="http://api.phonegap.com/1.0/file"/>
 </widget>
