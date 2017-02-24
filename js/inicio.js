@@ -13,15 +13,15 @@ $(document).ready(function(){
 	        contentType: false,
 	        success: function (data, status)
 	        {
-	        	$("#myModal").modal("hide");
-	        	page_loading();
-	        	$.post("http://veterinariakaluja.com/index.php/UsuarioController/mascotas", function(r){
-				$("#dash_contenido").html(r);
+	        	
 			})
 	        },
 	        error: function (xhr, desc, err)
 	        {
-	        	alert(err);
+	        	$("#myModal").modal("hide");
+	        	page_loading();
+	        	$.post("http://veterinariakaluja.com/index.php/UsuarioController/mascotas", function(r){
+				$("#dash_contenido").html(r);
 	        }
 	    });        
 	});
