@@ -7,7 +7,7 @@ $(document).ready(function(){
 	    $.ajax({
 	        url: url,
 	        type: $(this).attr("method"),
-	        dataType: "JSON",
+	        dataType: "POST",
 	        data: new FormData(this),
 	        processData: false,
 	        contentType: false,
