@@ -8,7 +8,7 @@ $(document).ready(function(){
 				loading();
 				var formData = new FormData(document.getElementById("mascota_form"));
 				$.ajax({
-                url: $("#mascota_form").attr("action"),
+                url: "http://veterinariakaluja.com/index.php/UsuarioController/alta_mascota",
                 type: "POST",
                 dataType: "html",
                 data: formData,
@@ -16,6 +16,7 @@ $(document).ready(function(){
                 contentType: false,
 	     		processData: false
             	}).done(function(res){
+            		alert(res);
                     $("#myModal").modal("hide");
                     page_loading();
 					$.post("http://veterinariakaluja.com/index.php/UsuarioController/mascotas", function(r){
