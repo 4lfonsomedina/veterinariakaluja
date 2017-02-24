@@ -1,6 +1,23 @@
 
 $(document).ready(function(){
-	
+	/**************alta mascota imagen*****************/
+	$(document).on("change","#file_foto",function(e){
+      	addImage(e); 
+     });
+    function addImage(e){
+	    var file = e.target.files[0],
+	    imageType = /image.*/;
+	    if (!file.type.match(imageType))
+	    return;
+	    var reader = new FileReader();
+	    reader.onload = fileOnload;
+	    reader.readAsDataURL(file);
+    }
+    function fileOnload(e) {
+      var result=e.target.result;
+      $('#mfoto').attr("src",result);
+    }
+	/*********************************/
 	$(document).on("click","#plus_mascota",function(){
 		loading();
 		$.post("http://veterinariakaluja.com/index.php/UsuarioController/form_alta_mascota",function(r){
