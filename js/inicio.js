@@ -1,22 +1,18 @@
 
 $(document).ready(function(){
 	/**************alta mascota imagen*****************/
-	$(document).on("change","#file_foto",function(e){
-      	addImage(e); 
+	$(document).on("change","#file_foto",function(){
+      	addImage(this); 
      });
-    function addImage(e){
-	    var file = e.target.files[0],
-	    imageType = /image.*/;
-	    if (!file.type.match(imageType))
-	    return;
-	    var reader = new FileReader();
-	    reader.onload = fileOnload;
-	    reader.readAsDataURL(file);
-    }
-    function fileOnload(e) {
-      var result=e.target.result;
-      $('#mfoto').attr("src",result);
-    }
+	function addImage(input) {
+	    if (input.files && input.files[0]) {
+	        var reader = new FileReader();
+	        reader.onload = function (e) {
+	            $('#mfoto').attr('src', e.target.result);
+	        }
+	        reader.readAsDataURL(input.files[0]);
+	    }
+	}
 	/*********************************/
 	$(document).on("click","#plus_mascota",function(){
 		loading();
