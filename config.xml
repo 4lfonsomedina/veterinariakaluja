@@ -25,6 +25,8 @@
         <splash density="port-xhdpi" src="logo2.png" />
         <splash density="port-xxhdpi" src="logo2.png" />
         <splash density="port-xxxhdpi" src="logo2.png" />
-        <feature name="http://api.phonegap.com/1.0/file"/>
+        <feature name="file" required="true">
+        	<param name="file" name="http://api.phonegap.com/1.0/file"/>
+        </feature>
     </platform>
 </widget>
