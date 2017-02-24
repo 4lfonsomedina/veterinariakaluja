@@ -8,9 +8,9 @@
         Servicio veterinario hasta la puerta de tu casa
     </description>
     <author email="4lfonsomedina@gmail.com" href="http://veterinariaKaluja.com">
-        PhoneGap Team
+        Moronga Technology
     </author>
-    <plugin name="cordova-plugin-file" />
+    
 
     <platform name="android">
         <icon density="ldpi" src="logo2.png" />
