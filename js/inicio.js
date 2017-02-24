@@ -14,14 +14,14 @@ $(document).ready(function(){
 	        success: function (data, status)
 	        {
 	        	
-			})
 	        },
 	        error: function (xhr, desc, err)
 	        {
 	        	$("#myModal").modal("hide");
 	        	page_loading();
 	        	$.post("http://veterinariakaluja.com/index.php/UsuarioController/mascotas", function(r){
-				$("#dash_contenido").html(r);
+					$("#dash_contenido").html(r);
+				})
 	        }
 	    });        
 	});
