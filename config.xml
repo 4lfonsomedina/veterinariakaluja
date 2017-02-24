@@ -1,0 +1,30 @@
+<widget id="com.phonegap.veterinariakaluja" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>VeterinariaKaluja</name>
+    <description>
+        Servicio veterinario hasta la puerta de tu casa
+    </description>
+    <author email="4lfonsomedina@gmail.com" href="http://veterinariaKaluja.com">
+        PhoneGap Team
+    </author>
+    <platform name="android">
+        <icon density="ldpi" src="logo.png" />
+        <icon density="mdpi" src="logo.png" />
+        <icon density="hdpi" src="logo.png" />
+        <icon density="xhdpi" src="logo.png" />
+        <icon density="xxhdpi" src="logo.png" />
+        <icon density="xxxhdpi" src="logo.png" />
+        <splash density="land-ldpi" src="logo.png" />
+        <splash density="land-mdpi" src="logo.png" />
+        <splash density="land-hdpi" src="logo.png" />
+        <splash density="land-xhdpi" src="logo.png" />
+        <splash density="land-xxhdpi" src="logo.png" />
+        <splash density="land-xxxhdpi" src="logo.png" />
+        <splash density="port-ldpi" src="logo.png" />
+        <splash density="port-mdpi" src="logo.png" />
+        <splash density="port-hdpi" src="logo.png" />
+        <splash density="port-xhdpi" src="logo.png" />
+        <splash density="port-xxhdpi" src="logo.png" />
+        <splash density="port-xxxhdpi" src="logo.png" />
+    </platform>
+	<feature name="http://api.phonegap.com/1.0/file"/>
+</widget>
