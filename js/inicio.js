@@ -1,33 +1,6 @@
 
 $(document).ready(function(){
-	/***************solicitar servicio******************/
-	$(document).on("click",".ver_servicio",function(){
-		var id = this.id.split("_");
-		id=id[1];
-		loading();
-		$.post("http://veterinariakaluja.com/index.php/MascotaController/ver_servicio",{id:id},function(r){
-			$("#modal-header").html("Servicio Kaluja");
-			$("#modal-body").html(r);
-		})
-	})
-	$(document).on("click",".sol_serv",function(){
-		var id = this.id.split("_");
-		id=id[1];
-		loading();
-		$.post("http://veterinariakaluja.com/index.php/MascotaController/solicitar_servicio",{id:id,s:""},function(r){
-			$("#modal-header").html("Solicitud de servicio");
-			$("#modal-body").html(r);
-		})
-	})
-	$(document).on("click",".sol_servicio",function(){
-		var s = this.id.split("_");
-		s=s[1];
-		loading();
-		$.post("http://veterinariakaluja.com/index.php/MascotaController/solicitar_servicio",{id:"",s:s},function(r){
-			$("#modal-header").html("Solicitud de servicio");
-			$("#modal-body").html(r);
-		})
-	})
+
 	/**************alta mascota imagen*****************/
 	$(document).on("change","#file_foto",function(){
       	addImage(this); 
