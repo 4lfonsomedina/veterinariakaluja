@@ -54,7 +54,6 @@ $(document).ready(function(){
 	    });        
 	});
 
->>>>>>> 10d78686d22d8ba900015f65754dde39c0bee368
 	$(document).on("change","#file_foto",function(){
       	addImage(this); 
      });
