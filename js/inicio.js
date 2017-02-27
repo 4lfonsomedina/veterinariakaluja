@@ -66,7 +66,6 @@ $(document).ready(function(){
 	        reader.readAsDataURL(input.files[0]);
 	    }
 	}
-	/*********************************/
 	$(document).on("click","#plus_mascota",function(){
 		loading();
 		$.post("http://veterinariakaluja.com/index.php/UsuarioController/form_alta_mascota",function(r){
@@ -82,6 +81,13 @@ $(document).ready(function(){
 			$("#modal-header").html("Ficha de Mascota");
 			$("#modal-body").html(r);
 		})
+	})
+	$(document).on("click",".ver_imagen_consulta",function(){
+		loading();
+		var id = this.id.split("_");
+		id=id[1];
+			$("#modal-header").html("Foto Consulta");
+			$("#modal-body").html("<center><img src='http://veterinariakaluja.com/assets/img/consultas/consulta_"+id+"_thumb.jpg' width='90%'></center>");
 	})
 /*******************************************************************/
 	//mascotas
