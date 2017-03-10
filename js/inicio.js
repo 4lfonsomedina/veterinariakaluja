@@ -126,6 +126,36 @@ $(document).ready(function(){
 		})
 
 	/**********************/
+	/******************************admin**********************************/
+		
+		$.post("http://veterinariakaluja.com/index.php/AdminController/servicios_activos",{}, function(r){
+				$("#dash_contenido").html(r);
+		})
+
+		$("#solicitudes_admin_dash").click(function(){
+			clearInterval(timer);
+			$.post("http://veterinariakaluja.com/index.php/AdminController/servicios_activos",{}, function(r){
+				$("#dash_contenido").html(r);
+			})
+		})
+		$("#curso_admin_dash").click(function(){
+			clearInterval(timer);
+			admin_servicios_en_curso();
+			timer = setInterval(function(){
+				admin_servicios_en_curso();
+			 }, 15000);
+		})
+		
+		function admin_servicios_en_curso(){
+			$.post("http://veterinariakaluja.com/index.php/AdminController/servicio_en_curso", function(r){
+				if(r!='0')
+					$("#dash_contenido").html(r);
+				else
+					$("#dash_contenido").html("<h2 style='color:white'>Sin servicios Activos</h2>");
+			})
+		}
+		
+	/********************************************************************/
 $(document).on("click",".calif",function(){
 	var c = this.id.split("_");
 		loading();
