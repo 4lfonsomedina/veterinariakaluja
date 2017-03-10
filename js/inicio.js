@@ -1,6 +1,6 @@
 
 $(document).ready(function(){
-	
+
 	/***************solicitar ubicacion*****************/
 	
 
@@ -158,6 +158,15 @@ $(document).on("click",".calif",function(){
 			$("#modal-body").html(r);
 		})
 	})
+	//configuracion
+	$(document).on("click","#configuracion_dash",function(){
+		loading();
+		$.post("http://veterinariakaluja.com/index.php/UsuarioController/configuracion_vista",function(r){
+			$("#modal-header").html("Configuracion de cuenta");
+			$("#modal-body").html(r);
+		})
+	})
+	
 	
 
 	function loading(){
@@ -186,7 +195,5 @@ $(document).on("click",".calif",function(){
 					$("#dash_contenido").html(r);
 			})
 		}
-
-	
 })
 
