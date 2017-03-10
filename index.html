@@ -6,11 +6,12 @@
   $(document).ready(function(){
 
     if(window.localStorage.getItem("correo")!=null&&window.localStorage.getItem("pass")!=null){
-      $("#dash_contenido").html("<center><div class='spinner' style='color:white;'>"+
+      /*$("#dash_contenido").html("<center><div class='spinner' style='color:white;'>"+
                   "<div class='bounce1'></div>"+
                   "<div class='bounce2'></div>"+
                   "<div class='bounce3'></div>"+
                 "</div></center>");
+                */
       $("#correo").val(window.localStorage.getItem("correo"));
       $("#pass").val(window.localStorage.getItem("pass"));
 
