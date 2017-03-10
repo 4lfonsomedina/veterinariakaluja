@@ -11,6 +11,7 @@
                   "<div class='bounce2'></div>"+
                   "<div class='bounce3'></div>"+
                 "</div></center>");
+
       $("#correo").val(window.localStorage.getItem("correo"));
       $("#pass").val(window.localStorage.getItem("pass"));
 
@@ -41,6 +42,12 @@
         alert("No se permiten campos vacios");
       }
     }
+    var $on = 'section';
+    $($on).css({
+      'background':'none',
+      'border':'none',
+      'box-shadow':'none'
+    });
 
   })
 </script>
@@ -52,6 +59,37 @@
 /*
 over-ride "Weak" message, show font in dark grey
 */
+/* .slideOne */
+.slideOne {
+  width: 50px;
+  height: 10px;
+  background: #333;
+  margin: 20px auto;
+  position: relative;
+  border-radius: 50px;
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.2);
+  label {
+    display: block;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    cursor: pointer;
+    background: #fcfff4;
+    background: linear-gradient(to bottom, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+    border-radius: 50px;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease;
+  }
+  input[type=checkbox] {
+    visibility: hidden;
+    &:checked + label {
+      left: 37px;
+    }  
+  }
+}
+/* end .slideOne */
 
 .progress-bar {
     color: #333;
@@ -138,7 +176,14 @@ form[role=login] {
           <br>
           
           <a id="cliente_entrar" class="btn btn-lg btn-primary" style="width:100%">Entrar</a>
-        
+        <center>
+          <!-- .slideOne -->
+          <div class="slideOne">  
+            <input type="checkbox" value="None" id="slideOne" name="check" checked />
+            <label for="slideOne"></label>
+          </div>
+          <!-- end .slideOne -->
+        </center>
         <div class="form-links">
         <!--
           <a href="http://veterinariakaluja.com">veterinariaKaluja.com</a>
