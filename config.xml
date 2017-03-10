@@ -22,6 +22,8 @@
     -->
 	
 	<plugin name="org.apache.cordova.geolocation" spec="~1" />
+    <plugin name=" org.apache.cordova.device" />
+    org.apache.cordova.device
 
     <!--
         If you do not want any permissions to be added to your app, add the
