@@ -161,6 +161,14 @@ $(document).on("click",".calif",function(){
 			$("#modal-body").html(r);
 		})
 	})
+	//catalogo
+	$(document).on("click","#catalogo",function(){
+		loading();
+		$.post("http://veterinariakaluja.com/index.php/UsuarioController/catalogo",function(r){
+			$("#modal-header").html("Catalogo");
+			$("#modal-body").html(r);
+		})
+	})
 	//configuracion
 	$(document).on("click","#configuracion_dash",function(){
 		loading();
