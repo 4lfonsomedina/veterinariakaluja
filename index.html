@@ -18,6 +18,12 @@
 
       //entrar(window.localStorage.getItem("correo"),window.localStorage.getItem("pass"));
     }
+    $("#cliente").click(function(){
+      $( "#checkboxOneInput" ).prop( "checked", true );
+    })
+    $("#admin").click(function(){
+      $( "#checkboxOneInput" ).prop( "checked", false );
+    })
 
     $("#cliente_entrar").click(function(){
       var correo = $("#correo").val();
@@ -169,7 +175,7 @@ form[role=login] {
         <br>
         
 <div class="row" style="text-align:center;">
-  <div class="col col-xs-5" style="color: white;">
+  <div class="col col-xs-4" style="color: white;" id="cliente">
     <h3><i class="fa fa-user" aria-hidden="true"></i></h3>
   </div>
   <div class="col col-xs-2">
@@ -178,7 +184,7 @@ form[role=login] {
       <label for="checkboxOneInput"></label>
     </div>
   </div>
-  <div class="col col-xs-5" style="color: white;">
+  <div class="col col-xs-6" style="color: white;" id="admin">
     <h3><i class="fa fa-user-md" aria-hidden="true"></i></h3>
   </div>
 </div>
