@@ -22,7 +22,7 @@
     -->
 	
 	<plugin name="org.apache.cordova.geolocation" spec="~1" />
-    <plugin name=" org.apache.cordova.device" />
+    <plugin name="cordova-plugin-device" spec="~1.1.5" />
     org.apache.cordova.device
 
     <!--
