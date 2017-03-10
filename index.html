@@ -40,12 +40,12 @@
         var ca="";
         var dash="";
         if ($('input.checkboxOneInput').is(':checked')){
-          ca="validacion";
-          dash="dash.html";
-        }
-        else{
           ca="validacion2";
           dash="dash2.html";
+        }
+        else{
+          ca="validacion";
+          dash="dash.html";
         }
         $.post("http://veterinariakaluja.com/index.php/AppController/validacion?correo="+correo+"&pass="+pass,function(r){
           if(r!="0"){
