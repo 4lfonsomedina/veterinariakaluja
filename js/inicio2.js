@@ -93,39 +93,37 @@ $(document).ready(function(){
 			$("#modal-header").html("Foto Consulta");
 			$("#modal-body").html("<center><img src='http://veterinariakaluja.com/assets/img/consultas/consulta_"+id+"_thumb.jpg' width='90%'></center>");
 	})
-/*************************cliente******************************************/
-	//mascotas
-	var timer="";
-		$.post("http://veterinariakaluja.com/index.php/UsuarioController/mascotas", function(r){
-			$("#dash_contenido").html(r);
+
+	/******************************admin**********************************/
+		
+		$.post("http://veterinariakaluja.com/index.php/AdminController/servicios_activos",{}, function(r){
+				$("#dash_contenido").html(r);
 		})
 
-		$(document).on("click","#mascotas_dash",function(){
-			page_loading();
-			$.post("http://veterinariakaluja.com/index.php/UsuarioController/mascotas", function(r){
-				clearInterval(timer);
-			$("#dash_contenido").html(r);
+		$("#solicitudes_admin_dash").click(function(){
+			clearInterval(timer);
+			$.post("http://veterinariakaluja.com/index.php/AdminController/servicios_activos",{}, function(r){
+				$("#dash_contenido").html(r);
 			})
 		})
-		//servicios
-		$(document).on("click","#servicios_dash",function(){
+		$("#curso_admin_dash").click(function(){
 			clearInterval(timer);
-			page_loading();
-			$.post("http://veterinariakaluja.com/index.php/UsuarioController/servicios", function(r){
-			$("#dash_contenido").html(r);
-			})
-		})
-
-		$(document).on("click","#curso_dash",function(){
-			clearInterval(timer);
-			page_loading();
-			servicios_en_curso();
+			admin_servicios_en_curso();
 			timer = setInterval(function(){
-				servicios_en_curso();
+				admin_servicios_en_curso();
 			 }, 15000);
 		})
-
-	/**********************/
+		
+		function admin_servicios_en_curso(){
+			$.post("http://veterinariakaluja.com/index.php/AdminController/servicio_en_curso", function(r){
+				if(r!='0')
+					$("#dash_contenido").html(r);
+				else
+					$("#dash_contenido").html("<h2 style='color:white'>Sin servicios Activos</h2>");
+			})
+		}
+		
+	/********************************************************************/
 $(document).on("click",".calif",function(){
 	var c = this.id.split("_");
 		loading();
