@@ -125,7 +125,7 @@ $(document).ready(function(){
 			 }, 15000);
 		})
 
-	/**********************/
+	/*********************************/
 $(document).on("click",".calif",function(){
 	var c = this.id.split("_");
 		loading();
@@ -137,7 +137,7 @@ $(document).on("click",".calif",function(){
 			$("#modal-body").html(r);
 		})
 	})
-/***********************/
+/***********************************/
 	$(document).on("click","#s_mejora",function(){
 		loading();
 		$.post("http://veterinariakaluja.com/index.php/SoporteController/mejora",function(r){
