@@ -49,7 +49,7 @@
         }
         $.post("http://veterinariakaluja.com/index.php/AppController/"+ca+"?correo="+correo+"&pass="+pass,function(r){
           if(r!="0"){
-            alert(ca+" "+dash);
+            //alert(ca+" "+dash);
             dash_session(correo,pass);
             window.location.replace(dash);
           }else{
