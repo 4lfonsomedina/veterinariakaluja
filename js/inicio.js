@@ -201,7 +201,7 @@ $(document).on("click",".calif",function(){
 	}
 	function servicios_en_curso(){
 			$.post("http://veterinariakaluja.com/index.php/UsuarioController/servicio_en_curso", function(r){
-				page_loading();
+				//page_loading();
 				if(r!='0')
 					$("#dash_contenido").html(r);
 			})

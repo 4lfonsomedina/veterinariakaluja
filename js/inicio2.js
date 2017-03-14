@@ -8,6 +8,7 @@ $(document).ready(function(){
 
 
 	/******************************admin**********************************/
+		page_loading();
 		var timer;
 		clearInterval(timer);
 		admin_servicios_activos();
@@ -17,7 +18,7 @@ $(document).ready(function(){
 
 		$("#curso_admin_dash").click(function(){
 			clearInterval(timer);
-			loading();
+			page_loading();
 			$.post("http://veterinariakaluja.com/index.php/AdminController/servicio_en_curso",{}, function(r){
 				$("#dash_contenido").html(r);
 			})
@@ -25,6 +26,7 @@ $(document).ready(function(){
 		//solicitudes_admin_dash
 		$("#solicitudes_admin_dash").click(function(){
 			clearInterval(timer);
+			page_loading();
 			admin_servicios_activos();
 			timer = setInterval(function(){
 				admin_servicios_en_curso();
@@ -32,7 +34,7 @@ $(document).ready(function(){
 		})
 		//http://veterinariakaluja.com/index.php/AdminController/servicios_activos
 		function admin_servicios_activos(){
-			loading();
+			page_loading();
 			$.post("http://veterinariakaluja.com/index.php/AdminController/servicios_activos", function(r){
 				if(r!='0')
 					$("#dash_contenido").html(r);
@@ -94,12 +96,5 @@ $(document).ready(function(){
 								  "<div class='bounce3'></div>"+
 								"</div></center>");
 	}
-	function servicios_en_curso(){
-			$.post("http://veterinariakaluja.com/index.php/UsuarioController/servicio_en_curso", function(r){
-				page_loading();
-				if(r!='0')
-					$("#dash_contenido").html(r);
-			})
-		}
 })
 
