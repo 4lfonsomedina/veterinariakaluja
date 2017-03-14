@@ -66,7 +66,7 @@ $(document).ready(function(){
 	//configuracion
 	$(document).on("click","#configuracion_dash2",function(){
 		loading();
-		$.post("http://veterinariakaluja.com/index.php/UsuarioController/configuracion_vista",function(r){
+		$.post("http://veterinariakaluja.com/index.php/AdminController/configuracion_vista",function(r){
 			$("#modal-header").html("Configuracion de cuenta");
 			$("#modal-body").html(r);
 		})
