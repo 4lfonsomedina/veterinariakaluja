@@ -17,6 +17,7 @@ $(document).ready(function(){
 
 		$("#curso_admin_dash").click(function(){
 			clearInterval(timer);
+			loading();
 			$.post("http://veterinariakaluja.com/index.php/AdminController/servicio_en_curso",{}, function(r){
 				$("#dash_contenido").html(r);
 			})
@@ -31,6 +32,7 @@ $(document).ready(function(){
 		})
 		//http://veterinariakaluja.com/index.php/AdminController/servicios_activos
 		function admin_servicios_activos(){
+			loading();
 			$.post("http://veterinariakaluja.com/index.php/AdminController/servicios_activos", function(r){
 				if(r!='0')
 					$("#dash_contenido").html(r);
