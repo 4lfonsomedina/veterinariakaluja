@@ -131,7 +131,7 @@ $(document).on("click",".calif",function(){
 		loading();
 		$.post("http://veterinariakaluja.com/index.php/UsuarioController/guardar_calificacion",{c:c[1],id:c[2]},function(r){
 			$.post("http://veterinariakaluja.com/index.php/AdminController/servicio_en_curso", function(r){
-				$("#servicio_en_curso").html(r);
+				$("#dash_contenido").html(r);
 			})
 			$("#modal-header").html("Servicio Calificado!");
 			$("#modal-body").html(r);

@@ -1,10 +1,49 @@
 
 $(document).ready(function(){
 
-	/***************solicitar ubicacion*****************/
+	/***************en curso*****************/
 	
 
-	/***************solicitar servicio******************/
+	/***************solicitudes*****************/
+	$(document).on("click",".datos_mascota2",function(){
+		var id = this.id.split("_");
+		id=id[1];
+		loading();
+		$.post("http://veterinariakaluja.com/index.php/MascotaController/datos_mascota2",{id:id},function(r){
+			$("#modal-header").html("Ficha de Mascota");
+			$("#modal-body").html(r);
+		})
+	})
+
+	$(document).on("click",".mapa_admin",function(){
+		var id = this.id.split("_");
+		id=id[1];
+		loading();
+		$.post("http://veterinariakaluja.com/index.php/AdminController/mapa",{id:id},function(r){
+			$("#modal-header").html("Direccion");
+			$("#modal-body").html(r);
+		})
+	})
+
+	$(document).on("click",".abrir_servicio_admin",function(){
+		var id = this.id.split("_");
+		id=id[1];
+		loading();
+		$.post("http://veterinariakaluja.com/index.php/AdminController/abrir_servicio",{id:id},function(r){
+			$("#modal-header").html("Servicio activo");
+			$("#modal-body").html(r);
+		})
+	})
+
+	$(document).on("click",".atendiendo_servicio",function(){
+		loading();
+		var id = this.id.split("_");
+		id=id[1];
+		$.post("http://veterinariakaluja.com/index.php/AdminController/atendiendo_servicio",{id:id},function(r){
+			$("#modal-header").html("Atendiendo Servicio");
+			$("#modal-body").html(r);
+		})
+	})
 
 
 	/******************************admin**********************************/
@@ -13,7 +52,7 @@ $(document).ready(function(){
 		clearInterval(timer);
 		admin_servicios_activos();
 		timer = setInterval(function(){
-			admin_servicios_en_curso();
+			admin_servicios_activos();
 		}, 15000);
 
 		$("#curso_admin_dash").click(function(){
@@ -29,12 +68,11 @@ $(document).ready(function(){
 			page_loading();
 			admin_servicios_activos();
 			timer = setInterval(function(){
-				admin_servicios_en_curso();
+				admin_servicios_activos();
 			 }, 15000);
 		})
 		//http://veterinariakaluja.com/index.php/AdminController/servicios_activos
 		function admin_servicios_activos(){
-			page_loading();
 			$.post("http://veterinariakaluja.com/index.php/AdminController/servicios_activos", function(r){
 				if(r!='0')
 					$("#dash_contenido").html(r);
