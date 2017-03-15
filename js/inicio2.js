@@ -2,7 +2,35 @@
 $(document).ready(function(){
 
 	/***************en curso*****************/
-	
+	$(document).on("click",".consulta",function(){
+		loading();
+		var id = this.id.split("_");
+		id=id[1];
+		$.post("http://veterinariakaluja.com/index.php/AdminController/consulta",{id:id},function(r){
+			$("#modal-header").html("Consulta");
+			$("#modal-body").html(r);
+		})
+	})
+
+	$(document).on("click",".vacuna",function(){
+		loading();
+		var id = this.id.split("_");
+		id=id[1];
+		$.post("http://veterinariakaluja.com/index.php/AdminController/vacuna",{id:id},function(r){
+			$("#modal-header").html("Vacuna");
+			$("#modal-body").html(r);
+		})
+	})
+
+	$(document).on("click",".finalizar_servicio",function(){
+		loading();
+		var id = this.id.split("_");
+		id=id[1];
+		$.post("http://veterinariakaluja.com/index.php/AdminController/finalizar_servicio",{id:id},function(r){
+			$("#modal-header").html("Finalizar Servicio");
+			$("#modal-body").html(r);
+		})
+	})
 
 	/***************solicitudes*****************/
 	$(document).on("click",".datos_mascota2",function(){
@@ -45,6 +73,13 @@ $(document).ready(function(){
 		})
 	})
 
+	$(document).on("click",".ver_imagen_consulta",function(){
+		loading();
+		var id = this.id.split("_");
+		id=id[1];
+			$("#modal-header").html("Foto Consulta");
+			$("#modal-body").html("<center><img src='http://veterinariakaluja.com/assets/img/consultas/consulta_"+id+"_thumb.jpg' width='90%'></center>");
+	})
 
 	/******************************admin**********************************/
 		page_loading();
